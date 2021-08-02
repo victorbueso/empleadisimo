@@ -44,7 +44,8 @@
                             </div>
                         </div>
                         <div>
-                            <input type="text" name="" placeholder="Ingrese Rubros ejemplo: Carpinteria, Fontaneria, Automovilismo" formControlName="rubros">
+                            <p [ngClass]="{'display-block': invalidRubros()}" class="error-message">No se ingreso ningun rubro o no es valido</p>
+                            <input [ngClass]="{'input-error': invalidRubros()}" type="text" name="" placeholder="Ingrese Rubros ejemplo: Carpinteria, Fontaneria, Automovilismo" formControlName="rubros">
                         </div>
                     </form>
                         <form action="" [formGroup]="sucursalForm">

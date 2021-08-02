@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl ,FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { PageEvent } from '@angular/material/paginator';
 import { CookieService } from 'ngx-cookie-service';
@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   verifiedAccount:Boolean=false;
   mostrar:string = "todas";
   regionVisible:string="publicaciones";
+  nameT: boolean = false;
 
   successMessage = false;
   successfull = ``;
@@ -163,7 +164,14 @@ export class HomeComponent implements OnInit {
       this._modal.dismissAll();
     }, 3000);
   }
+ 
+  invalidName(){
+    if(this.formPublications.get('title')?.touched)
+      this.nameT = false;
+    return this.formPublications.get('title')?.invalid && this.formPublications.get('title')?.touched;
+  }
 
+  
   get title(){
     return this.formPublications.get('title')?.invalid && this.formPublications.get('title')?.touched;
   }

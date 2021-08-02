@@ -92,6 +92,9 @@ export class UpdateInfoComponent implements OnInit {
     this.helperService.navbarNoVisible.emit();
   }
 
+  invalidRubros(){
+    return this.forma.get('rubros')?.invalid && this.forma.get('rubros')?.touched;
+  }
 
   invalidName(){
     return this.forma.get('name')?.invalid && this.forma.get('name')?.touched;

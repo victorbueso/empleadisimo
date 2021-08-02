@@ -35,8 +35,8 @@ h1, h3{
   color: red;
 }
 
-.input-error{
-    border: 2px solid red;
+.display-block {
+  display: block !important;
 }
 
 .error-message {
@@ -49,4 +49,8 @@ h1, h3{
   opacity: 0%;
   padding: 0;
   margin: 0;
+}
+
+.input-error {
+  border-color: red !important;
 }
