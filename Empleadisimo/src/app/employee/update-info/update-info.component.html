@@ -15,6 +15,7 @@
                 </p>
             </div>
         </div>
+
         <!--Form para imagen-->
         <form action="" [formGroup]="uploadForm">
             <div>
@@ -38,9 +39,9 @@
                     </div>
                 </div>
             </div>
-            
             <!--class="d-none"-->
         </form>
+
         <!--Form para datos-->
         <form #form class="basic-form" [formGroup]="forma" (ngSubmit)="sendInformation()">
             <p [ngClass]="{'display-block': invalidName() || this.nameV}" class="error-message">No se ingreso nombre o no es valido</p>
@@ -59,5 +60,6 @@
                 <button (onclick)="sendInformation()" class="next-button">Siguiente</button>
             </div>
         </form>
+        
     </div>
 </div>
